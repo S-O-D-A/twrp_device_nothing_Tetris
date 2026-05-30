@@ -43,11 +43,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 	export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 	export OF_NO_MIUI_PATCH_WARNING=1
-	export OF_VANILLA_BUILD=0
+export FOX_VANILLA_BUILD=1
+export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
 
 	# Device Specifics
         export TARGET_DEVICE_ALT="A015"
-	export FOX_AB_DEVICE=1
+export FOX_AB_DEVICE=1
+export FOX_VIRTUAL_AB_DEVICE=1
 
 	# Lights
 	export OF_FLASHLIGHT_ENABLE=0
@@ -75,7 +77,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_DELETE_AROMAFM=1
 
 	export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
-	export OF_PATCH_AVB20=1
+# export OF_PATCH_AVB20=1  # disabled for first Nothing/MediaTek test build
 	export OF_DEFAULT_KEYMASTER_VERSION=4.1
         export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800"; # Tuesday, January 1, 2019 12:00:00 AM GMT+00:00
 	export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
@@ -87,8 +89,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
 	# R12.1 Settings
-	export FOX_VERSION="R12.1_InternalBeta"
-	export OF_MAINTAINER="Tetris-Development"
+export OF_MAINTAINER="SODA"
+export FOX_MAINTAINER_PATCH_VERSION="1"
 
 	# Build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
