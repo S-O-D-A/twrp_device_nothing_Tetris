@@ -85,8 +85,8 @@ export FOX_VIRTUAL_AB_DEVICE=1
 
         # OTA
         export OF_KEEP_DM_VERITY=1
-        export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-        export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0  # incompatible with FOX_VANILLA_BUILD
+# export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1  # disabled for vanilla bringup
 
 	# R12.1 Settings
 export OF_MAINTAINER="SODA"
