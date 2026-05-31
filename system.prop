@@ -5,7 +5,7 @@ ro.boot.dynamic_partitions=true
 ro.postinstall.fstab.prefix=/system
 
 # USB MTP
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=adb
 
 # Misc
 ro.vendor.mediatek.platform=MT6878
