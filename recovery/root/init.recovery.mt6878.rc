@@ -13,6 +13,7 @@ on boot
     insmod /vendor/lib/modules/bootinfo.ko
     insmod /vendor/lib/modules/touchpanel_event_notify.ko
     insmod /vendor/lib/modules/focaltech_tp.ko
+    insmod /vendor/lib/modules/hbt.ko
 
 on fs && property:ro.debuggable=0
     start adbd
