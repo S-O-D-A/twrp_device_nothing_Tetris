@@ -13,10 +13,14 @@ on init
 on boot
     insmod /lib/modules/mtk_disp_notify.ko
     insmod /lib/modules/mediatek-drm-panel-drv.ko
+    insmod /lib/modules/sc8541_charger.ko
+    insmod /lib/modules/upm6720_charger.ko
+    insmod /lib/modules/nu2115_charger.ko
+    insmod /lib/modules/sgm41606S_charger.ko
     insmod /lib/modules/bootinfo.ko
     insmod /lib/modules/touchpanel_event_notify.ko
-    insmod /lib/modules/focaltech_tp.ko
     insmod /lib/modules/hbt.ko
+    insmod /lib/modules/focaltech_tp.ko
 
 on fs && property:ro.debuggable=0
     start adbd
