@@ -10,6 +10,10 @@ on init
     mkdir /dev/block/bootdevice 0755 root root
     symlink /dev/block/by-name /dev/block/bootdevice/by-name
 
+on fs
+    mkdir /metadata 0771 system system
+    mount f2fs /dev/block/by-name/metadata /metadata noatime nosuid nodev sync
+
 on boot
     insmod /lib/modules/mtk_disp_notify.ko
     insmod /lib/modules/mediatek-drm-panel-drv.ko
