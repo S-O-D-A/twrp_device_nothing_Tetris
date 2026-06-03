@@ -4,6 +4,9 @@ on init
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "11201000.usb0"
     setprop sys.usb.ffs.aio_compat 1
+    setprop persist.sys.usb.config adb
+    setprop sys.usb.config adb
+    setprop orangefox.vendor_boot.recovery true
     mkdir /dev/block/bootdevice 0755 root root
     symlink /dev/block/by-name /dev/block/bootdevice/by-name
 
@@ -17,3 +20,16 @@ on boot
 
 on fs && property:ro.debuggable=0
     start adbd
+
+# Keep ADB alive; OrangeFox MTP switching breaks USB gadget on Tetris
+on property:sys.usb.config=mtp
+    setprop sys.usb.config adb
+
+on property:sys.usb.config=mtp,adb
+    setprop sys.usb.config adb
+
+on property:persist.sys.usb.config=mtp
+    setprop persist.sys.usb.config adb
+
+on property:persist.sys.usb.config=mtp,adb
+    setprop persist.sys.usb.config adb
