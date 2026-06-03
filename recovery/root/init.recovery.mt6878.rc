@@ -11,12 +11,12 @@ on init
     symlink /dev/block/by-name /dev/block/bootdevice/by-name
 
 on boot
-    insmod /vendor/lib/modules/mtk_disp_notify.ko
-    insmod /vendor/lib/modules/mediatek-drm-panel-drv.ko
-    insmod /vendor/lib/modules/bootinfo.ko
-    insmod /vendor/lib/modules/touchpanel_event_notify.ko
-    insmod /vendor/lib/modules/focaltech_tp.ko
-    insmod /vendor/lib/modules/hbt.ko
+    insmod /lib/modules/mtk_disp_notify.ko
+    insmod /lib/modules/mediatek-drm-panel-drv.ko
+    insmod /lib/modules/bootinfo.ko
+    insmod /lib/modules/touchpanel_event_notify.ko
+    insmod /lib/modules/focaltech_tp.ko
+    insmod /lib/modules/hbt.ko
 
 on fs && property:ro.debuggable=0
     start adbd
